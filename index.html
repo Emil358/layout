@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Graduation project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.5.0.min.js"></script>
+  <script src="js/parallax.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="popup-container popup-container--hide">
+    <form method="post" action="#" class="popup" enctype="multipart/form-data">
+      <button type="submit" aria-label="Закрыть меню" class="close">
+        <span class="close__line"></span>
+        <span class="close__line"></span>
+      </button>
+      <label for="name" class="popup__heading">Ваше имя</label>
+      <input type="text" name="name" placeholder="Ваше имя" class="popup__input" id="name" required>
+      <label for="email" class="popup__heading">Ваш E-mail</label>
+      <input type="email" name="email" placeholder="Ваш E-mail" class="popup__input" id="email" required>
+      <label for="call" class="popup__heading popup__heading--hide">Ваш номер телефона</label>
+      <input type="tel" name="call" placeholder="+7 XXX XXX XX XX" class="popup__input popup__input--hide" id="call" required pattern="+7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}">
+      <input type="submit" class="popup__send">
+    </form>
+  </div>
+  <header class="container">
+    <div class="header__flex-padding">
+      <button type="submit" aria-label="Открыть меню" class="header__burger">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+
+      <div class="header__menu-wrapper">
+        <nav>
+          <ul class="menu header__menu">
+            <li class="menu__item"><a class="menu__link" href="#">Услуги</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Портфолио</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Стоимость</a></li>
+          </ul>
+        </nav>
+        <button type="submit" aria-label="Закрыть меню" class="header__close-menu">
+          <span class="close-menu__line"></span>
+          <span class="close-menu__line"></span>
+        </button>
+      </div>
+
+      <div class="telephone-call">
+        <a class="address-link telephone-call__number" href="tel:+74999957755" aria-label="Позвонить по номеру">+7 (499) 995-55-77</a>
+        <button type="submit" aria-label="Заказать звонок" class="request-call telephone-call__request">Заказать звонок</button>
+      </div>
+
+      <button type="submit" aria-label="Заказать звонок" class="header__request-call--width-590"></button>
+
+    </div>
+  </header>
+  <main>
+
+    <section class="first container">
+      <div class="first__content">
+        <h1 class="first__heading">Дмитрий Алексеев</h1>
+        <span class="first__descr">Frontend-разработчик и веб-верстальщик</span>
+        <button type="submit" aria-label="Узнать больше" class="button-wrapper first__button">Узнать больше</button>
+      </div>
+      <div class="first__photo-wrapper">
+        <img class="first__photo" src="img/first/photo.png" alt="photo">
+      </div>
+      <div  id="first__scene">
+        <div data-depth="0.6"><div class="fly__wrapper fly--1">{ }</div></div>
+        <div data-depth="0.3"><div class="fly__wrapper fly--2">#</div></div>
+        <div data-depth="0.5"><div class="fly__wrapper fly--3">&lt;div&gt;</div></div>
+        <div data-depth="0.8"><div class="fly__wrapper fly--4">&lt;/&gt;</div></div>
+        <div data-depth="0.4"><div class="fly__wrapper fly--5">&lt;div&gt;</div></div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="container">
+        <div class="skill__flex-padding">
+          <h2 class="heading">Что я делаю</h2>
+          <ul class="skill__list">
+            <li class="skill__item skill__item--1">
+              Вёрстка лендинг&nbsp;–&nbsp;страниц и&nbsp;сайтов любой сложности
+            </li>
+            <li class="skill__item skill__item--2">
+              Адаптивная вёрстка под&nbsp;все браузеры и&nbsp;устройства
+            </li>
+            <li class="skill__item skill__item--3">
+              Frontend&nbsp;–&nbsp;разработка и&nbsp;программирование
+            </li>
+            <li class="skill__item skill__item--4">
+              Исправление и&nbsp;доработка существующей вёрстки
+            </li>
+          </ul>
+
+          <button type="submit" aria-label="Узнать стоимость" class="button-wrapper skill__button">Узнать стоимость</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio container">
+      <div class="portfolio__flex-padding">
+        <h2 class="heading">Примеры моих работ</h2>
+        <div class="slider">
+          <ul class="slider__list">
+            <li class="slider__item  portfolio__list">
+              <img class="portfolio__image" src="img/portfolio/hypnotherapy.jpg" alt="hypnotherapy">
+              <a class="portfolio__about">Сайт психолога Веры Антоновой</a>
+            </li>
+            <li class="slider__item  portfolio__list">
+              <img class="portfolio__image" src="img/portfolio/baby.jpg" alt="baby">
+              <a class="portfolio__about">Сайт магазина детской одежды</a>
+            </li>
+            <li class="slider__item  portfolio__list">
+              <img class="portfolio__image" src="img/portfolio/fish.jpg" alt="fish">
+              <a class="portfolio__about">Сайт магазина «Рыболов»</a>
+            </li>
+          </ul>
+        </div>
+
+        <button type="submit" aria-label="Заказать проект" class="button-wrapper portfolio__button">Заказать проект</button>
+        <button class="main-slider__arrow main-slider-prev">
+          <span class="main-slider-prev-icon"></span>
+        </button>
+        <button class="main-slider__arrow main-slider-next">
+          <span class="main-slider-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="price">
+      <div class="price__container">
+        <h2 class="price__heading">Адаптивная вёрстка под&nbsp;все устройства и&nbsp;браузеры от&nbsp;1000 рублей всего за&nbsp;4 часа.*</h2>
+        <p class="price__descr">Срок и&nbsp;стоимость могут отличаться от&nbsp;заявленных и&nbsp;рассчитываются  индивидуально, в&nbsp;зависимости от&nbsp;сложности задач.</p>
+        <div  id="second__scene">
+          <div data-depth="0.2"><div class="fly fly--6">{ }</div></div>
+          <div data-depth="0.2"><div class="fly fly--7">#</div></div>
+          <div data-depth="0.2"><div class="fly fly--8">&lt;div&gt;</div></div>
+          <div data-depth="0.2"><div class="fly fly--9">&lt;/&gt;</div></div>
+          <div data-depth="0.2"><div class="fly fly--10">{&nbsp;}</div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__flex-padding">
+        <nav>
+          <ul class="menu">
+            <li class="footer__menu-item"><a class="menu__link" href="#">Услуги</a></li>
+            <li class="footer__menu-item"><a class="menu__link" href="#">Портфолио</a></li>
+            <li class="footer__menu-item"><a class="menu__link" href="#">Стоимость</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer__address">
+          <a class="address-link footer__address-link footer__address-link--call" href="tel:+74999957755">+7 (499) 995-77-55</a>
+          <a class="address-link footer__address-link footer__address-link--mail"
+            aria-label="Написать емейл"
+            href="mailto:dmitry@alekseev.com">dmitry@alekseev.com</a>
+        </address>
+
+        <div>
+          <button type="submit" aria-label="Заказать звонок" class="request-call footer__request">Заказать звонок</button>
+          <ul class="social">
+            <li class="social__item"><a class="social__link social__link--vk" aria-label="vk" href="#"></a></li>
+            <li class="social__item"><a class="social__link social__link--fbook" aria-label="facebook" href="#"></a></li>
+            <li class="social__item"><a class="social__link social__link--twit" aria-label="twitter" href="#"></a></li>
+            <li class="social__item"><a class="social__link social__link--insta" aria-label="instagram" href="#"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">
+      © Дмитрий Алексеев, 2016 - 2018
+    </p>
+  </footer>
+
+</body>
+</html>
+
