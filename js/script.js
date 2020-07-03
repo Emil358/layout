@@ -79,7 +79,7 @@ $(function(){
   $('.header__burger').on('click', function() {
     $('.header__menu-wrapper').addClass('menu__showed');
     $("html,body").css('overflow','hidden');
-    $(document).bind('touchmove', false);
+
     $('body').addClass('fixed');
   });
 
@@ -87,14 +87,14 @@ $(function(){
     $('.header__menu-wrapper').removeClass('menu__showed');
     $( "body" ).removeClass( "fixed" );
     $("html,body").css('overflow','auto');
-    $(document).bind('touchmove', true);
+
   });
 
   $('.button-wrapper').on('click', function(){
     $('header, main, footer').addClass('blur');
     $('.popup-container-service').removeClass('popup-container-service--hide');
     $("html,body").css('overflow','hidden');
-    $(document).bind('touchmove', false);
+    $('.popup__input-service').attr("required");
     $('body').addClass('fixed');
   });
 
@@ -106,7 +106,7 @@ $(function(){
       $('.gratitude-container').addClass('gratitude-container--hide');
       $( "body" ).removeClass( "fixed" );
       $("html,body").css('overflow','auto');
-      $(document).bind('touchmove', true);
+      return false;
     }
   });
 
@@ -117,63 +117,96 @@ $(function(){
     $('.gratitude-container').addClass('gratitude-container--hide');
     $( "body" ).removeClass( "fixed" );
     $("html,body").css('overflow','auto');
-    $(document).bind('touchmove', true);
+    return false;
   });
 
   $('.request-call, .header__request-call--width-590').on('click', function(){
     $('header, main, footer').addClass('blur');
     $('.popup-container-call').removeClass('popup-container-call--hide');
     $("html,body").css('overflow','hidden');
-    $(document).bind('touchmove', false);
+    $('.popup__input-call').attr("required");
     $('body').addClass('fixed');
   });
 
-  var name_service = $('.popup__input-service--name').val();
-  var email_service = $('.popup__input-service--email').val();
-  var tel_service = $('.popup__input-service--tel').val();
-  var name_call = $('.popup__input-call--name').val();
-  var tel_call = $('.popup__input-call--tel').val();
 
-  $('.popup__send').on('click', function(){
+  $('.popup__send-service').on('click', function(){
     var name_service = $('.popup__input-service--name').val();
     var email_service = $('.popup__input-service--email').val();
     var tel_service = $('.popup__input-service--tel').val();
-    var name_call = $('.popup__input-call--name').val();
-    var tel_call = $('.popup__input-call--tel').val();
 
-    if ((name_service.length !==0 && email_service.length !==0 && tel_service.length !==0) || (name_call.length !==0 && tel_call.length !==0)) {
+    if (name_service.length !==0 && email_service.length !==0 && tel_service.length !==0) {
       $('.popup__input-service--name').removeClass('error');
       $('.popup__input-service--email').removeClass('error');
       $('.popup__input-service--tel').removeClass('error');
-      $('.popup__input-call--name').removeClass('error');
-      $('.popup__input-call--tel').removeClass('error');
 
       $('.popup-container-service').addClass('popup-container-service--hide');
-      $('.popup-container-call').addClass('popup-container-call--hide');
       $('.gratitude-container').removeClass('gratitude-container--hide');
 
       $('.popup__input-service--name').val('');
       $('.popup__input-service--email').val('');
       $('.popup__input-service--tel').val('');
-      $('.popup__input-call--name').val('');
-      $('.popup__input-call--tel').val('');
-    } else if (name_service.length !==0 || name_call.length !==0) {
+
+      $(".popup__input-service").removeAttr("required");
+
+      return false;
+    } else if (name_service.length !==0) {
+      $('.popup__input-service--name').removeClass('error');
+      $('.popup__input-service--email').removeClass('error');
+      $('.popup__input-service--tel').removeClass('error');
+
       $('.popup__input-service--email').addClass('error');
       $('.popup__input-service--tel').addClass('error');
-      $('.popup__input-call--tel').addClass('error');
-    } else if (tel_service.length !==0 || tel_call.length !==0) {
+    } else if (tel_service.length !==0) {
+      $('.popup__input-service--name').removeClass('error');
+      $('.popup__input-service--email').removeClass('error');
+      $('.popup__input-service--tel').removeClass('error');
+
       $('.popup__input-service--name').addClass('error');
       $('.popup__input-service--email').addClass('error');
-      $('.popup__input-call--name').addClass('error');
     } else if (email_service.length !==0) {
+      $('.popup__input-service--name').removeClass('error');
+      $('.popup__input-service--email').removeClass('error');
+      $('.popup__input-service--tel').removeClass('error');
+
       $('.popup__input-service--name').addClass('error');
       $('.popup__input-service--tel').addClass('error');
-      $('.popup__input-call--name').addClass('error');
-      $('.popup__input-call--tel').addClass('error');
     } else {
       $('.popup__input-service--name').addClass('error');
       $('.popup__input-service--email').addClass('error');
       $('.popup__input-service--tel').addClass('error');
+    }
+
+  });
+
+  $('.popup__send-call').on('click', function(){
+    var name_call = $('.popup__input-call--name').val();
+    var tel_call = $('.popup__input-call--tel').val();
+
+    if (name_call.length !==0 && tel_call.length !==0) {
+      $('.popup__input-call--name').removeClass('error');
+      $('.popup__input-call--tel').removeClass('error');
+
+      $('.popup-container-call').addClass('popup-container-call--hide');
+      $('.gratitude-container').removeClass('gratitude-container--hide');
+
+      $('.popup__input-call--name').val('');
+      $('.popup__input-call--tel').val('');
+
+
+      $(".popup__input-call").removeAttr("required");
+
+      return false;
+    } else if (name_call.length !==0) {
+      $('.popup__input-call--name').removeClass('error');
+      $('.popup__input-call--tel').removeClass('error');
+
+      $('.popup__input-call--tel').addClass('error');
+    } else if (tel_call.length !==0) {
+      $('.popup__input-call--name').removeClass('error');
+      $('.popup__input-call--tel').removeClass('error');
+
+      $('.popup__input-call--name').addClass('error');
+    } else {
       $('.popup__input-call--name').addClass('error');
       $('.popup__input-call--tel').addClass('error');
     }

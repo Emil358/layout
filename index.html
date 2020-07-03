@@ -14,7 +14,7 @@
 <body>
 
   <div class="popup-container-service popup-container-service--hide">
-    <div class="popup-service">
+    <form class="popup-service"  method="post" >
       <button type="submit" aria-label="Закрыть меню" class="close">
         <span class="close__line"></span>
         <span class="close__line"></span>
@@ -25,12 +25,12 @@
       <input type="email" name="email" placeholder="Ваш E-mail" class="popup__input-service popup__input-service--email" id="email" required>
       <label for="call" class="popup__heading-service">Ваш номер телефона</label>
       <input type="tel" name="call" placeholder="+7(XXX) XXX XX XX" class="popup__input-service popup__input-service--tel" id="call" required>
-      <input type="submit" class="popup__send">
-    </div>
+      <input type="submit" class="popup__send-wrapper popup__send-service">
+    </form>
   </div>
 
   <div class="popup-container-call popup-container-call--hide">
-    <form class="popup-call" method="post" action="#" enctype="multipart/form-data">
+    <form class="popup-call" method="post" >
       <button type="submit" aria-label="Закрыть меню" class="close">
         <span class="close__line"></span>
         <span class="close__line"></span>
@@ -38,8 +38,8 @@
       <label for="name" class="popup__heading-call">Ваше имя</label>
       <input type="text" name="name" placeholder="Ваше имя" class="popup__input-call popup__input-call--name" id="name" required>
       <label for="request-call" class="popup__heading-call">Ваш номер телефона</label>
-      <input type="tel" name="call" placeholder="+7 XXX XXX XX XX" class="popup__input-call popup__input-call--tel" id="request-call" required>
-      <input type="submit" class="popup__send">
+      <input type="tel" name="request-call" placeholder="+7 XXX XXX XX XX" class="popup__input-call popup__input-call--tel" id="request-call" required>
+      <input type="submit" class="popup__send-wrapper popup__send-call">
     </form>
   </div>
 
