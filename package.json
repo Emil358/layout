@@ -1,0 +1,27 @@
+{
+  "name": "graduation-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emil358/layout.git"
+  },
+  "author": "faiz emil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emil358/layout/issues"
+  },
+  "homepage": "https://github.com/Emil358/layout#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0"
+  }
+}
